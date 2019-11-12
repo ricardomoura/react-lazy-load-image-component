@@ -30,9 +30,9 @@ class LazyLoadImage extends React.Component {
     const { afterLoad, beforeLoad, delayMethod, delayTime, effect,
       placeholder, placeholderSrc, scrollPosition, threshold,
       useIntersectionObserver, visibleByDefault, wrapperClassName, wrapperStyle,
-      ...imgProps } = this.props;
+      imgStyle, ...imgProps } = this.props;
 
-    return <img onLoad={this.onImageLoad()} {...imgProps} />;
+    return <img style={imgStyle} onLoad={this.onImageLoad()} {...imgProps} />;
   }
 
   getLazyLoadImage(image) {
