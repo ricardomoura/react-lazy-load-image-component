@@ -29,7 +29,7 @@ class LazyLoadImage extends React.Component {
   getImg() {
     const { afterLoad, beforeLoad, delayMethod, delayTime, effect,
       placeholder, placeholderSrc, scrollPosition, threshold,
-      useIntersectionObserver, visibleByDefault, wrapperClassName,
+      useIntersectionObserver, visibleByDefault, wrapperClassName, wrapperStyle,
       ...imgProps } = this.props;
 
     return <img onLoad={this.onImageLoad()} {...imgProps} />;
@@ -61,7 +61,7 @@ class LazyLoadImage extends React.Component {
 
   getWrappedLazyLoadImage(lazyLoadImage) {
     const { effect, height, placeholderSrc,
-      width, wrapperClassName } = this.props;
+      width, wrapperClassName, wrapperStyle } = this.props;
     const { loaded } = this.state;
 
     const loadedClassName = loaded ?
@@ -79,6 +79,7 @@ class LazyLoadImage extends React.Component {
           display: 'inline-block',
           height: height,
           width: width,
+          ...wrapperStyle,
         }}>
         {lazyLoadImage}
       </span>
