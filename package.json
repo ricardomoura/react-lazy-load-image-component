@@ -39,7 +39,8 @@
     "test": "jest",
     "start": "webpack --watch",
     "build": "webpack",
-    "install": "webpack"
+    "install": "webpack",
+    "prepare": "webpack"
   },
   "jest": {
     "verbose": true,
